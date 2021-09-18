@@ -21,6 +21,10 @@ public class Notebook {
         TaskWriter.write(notebook, writer);
     }
 
+    public void showPriority(){
+        TaskWriter.writePriorityTusk(notebook, writer);
+    }
+
     public void add(Note note) {
         if (note != null)
             notebook.add(note);

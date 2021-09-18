@@ -36,6 +36,16 @@ public class NotebookTest {
     }
 
     @Test
+    public void showPriorityShouldReturnPriorityTask() {
+        String expectedOutput = "Task -> Test One : Expiration date -> 09.09.1999 : id -> 1";
+
+        notebook.add(testNote1);
+        notebook.showPriority();
+        Assertions.assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+    }
+
+
+    @Test
     public void refreshShouldSetNewIdToTasks() {
         notebook.add(testNote1);
         notebook.add(testNote2);

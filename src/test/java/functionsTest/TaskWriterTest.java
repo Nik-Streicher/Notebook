@@ -37,4 +37,22 @@ public class TaskWriterTest {
         Assertions.assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
     }
 
+    @Test
+    public void writePriorityTaskShouldWritePriorityTask() {
+        String expectedOutput = "Task -> Test One : Expiration date -> 09.09.1999 : id -> 1";
+
+        TaskWriter.writePriorityTusk(list, writer);
+
+        Assertions.assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+    }
+
+    @Test
+    public void writePriorityTaskShouldNotWriteNonPriorityTask() {
+        String expectedOutput = "";
+
+        TaskWriter.writePriorityTusk(new ArrayList<>(List.of(new Note(false, "Hello World", "", 1))), writer);
+
+        Assertions.assertEquals(expectedOutput, outputStreamCaptor.toString().trim());
+    }
+
 }

@@ -18,6 +18,7 @@ public class CommandSwitch {
     public void choose(String command) {
         switch (command) {
             case "/show" -> notebook.show();
+            case "/Pshow" -> notebook.showPriority();
             case "/add" -> notebook.add(Note.createFromString(TaskReader.read(reader), (notebook.getSize()) + 1));
             case "/removeLast" -> notebook.removeLast();
             case "/removeAll" -> notebook.removeAll();
